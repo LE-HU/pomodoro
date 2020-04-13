@@ -1,0 +1,150 @@
+body {
+  background-color: #05303a;
+  font-size: 24px;
+  color: white;
+  font-family: 'Nova Round', cursive, 'Open Sans', sans-serif;
+
+
+}
+
+.container {
+  width: 33%;
+  margin: auto;
+}
+
+#pomodoro-clock {
+  display: grid;
+  grid-template-rows: 50px 100px 100px 100px;
+  grid-template-areas:
+    "main-label main-label"
+    "break session"
+    "timer timer"
+    "controls controls";
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}
+
+#pomodoro-clock {
+  
+}
+
+#main-label {
+  grid-area: main-label;
+}
+
+#break {
+  grid-area: break;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "break-label break-label break-label"
+    "break-decrement break-length break-increment";
+  justify-content: stretch;
+}
+
+#break-label {
+  grid-area: break-label;
+}
+
+#break-decrement {
+  grid-area: break-decrement;
+  color: #f9d1c9;
+}
+
+#break-length {
+  grid-area: break-length;
+}
+
+#break-increment {
+  grid-area: break-increment;
+  color: #f9d1c9;
+}
+
+#session {
+  grid-area: session;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "session-label session-label session-label"
+    "session-decrement session-length session-increment";  
+}
+
+#session-label {
+  grid-area: session-label;
+}
+
+#session-decrement {
+  grid-area: session-decrement;
+  color: #f9d1c9;
+}
+
+#session-length {
+  grid-area: session-length;
+}
+
+#session-increment {
+  grid-area: session-increment;
+  color: #f9d1c9;
+}
+#timer {
+  border: 5px solid #131129;;
+  border-radius: 20px;
+  grid-area: timer;
+  padding: 25px 50px;
+}
+
+#controls {
+  grid-area: controls;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-teamplate-rows: 1fr;
+  grid-template-areas:
+    "start-stop reset"
+}
+
+#start_stop {
+  grid-area: start-stop;
+  justify-self: start;
+  transition: all 0.1s;
+  color: #f9d1c9;
+}
+
+#start_stop:hover {
+  transform: translateX(2px);
+}
+
+#start_stop:active {
+  transform: scale(0.98);
+  color: white;
+}
+
+#reset {
+  grid-area: reset;
+  justify-self: end;
+  transition: all 0.1s;
+  color: #f9d1c9;
+}
+
+#reset:hover {
+  transform: translateX(2px);
+}
+
+#reset:active {
+  transform: scale(0.98);
+  color: white;
+}
+
+.arrows: {
+  transition: all 0.1s;
+}
+
+.arrows:hover {
+  transform: translateX(2px);
+}
+
+.arrows:active {
+  transform: scale(0.98);
+}
