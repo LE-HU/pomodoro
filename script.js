@@ -12,10 +12,9 @@ let startStopBtn = document.querySelector("#start_stop");
 let resetBtn = document.querySelector("#reset");
 let beepSound = document.querySelector("#beep");
 
+// flags for running interval & session/break diversification.
 let running = false;
 let activeSession = true;
-
-console.log("kurwa mać");
 
 // ONLOAD SETUP
 window.onload = function () {
@@ -69,7 +68,7 @@ breakDec.addEventListener('click', () => {
   }
 });
 
-
+// start-stop controls ( + reset);
 startStopBtn.addEventListener('click', () => {
   if (!running) {
     running = true;
@@ -79,7 +78,6 @@ startStopBtn.addEventListener('click', () => {
     timeCountdown(timeLeft.innerText);
   }
 });
-
 resetBtn.addEventListener('click', () => {
   running = false;
   sessionLength.innerText = 25;
@@ -90,6 +88,7 @@ resetBtn.addEventListener('click', () => {
   beepSound.currentTime = 0;
 });
 
+// main timer function
 function timeCountdown(duration) {
   //convert 25:00 to 25 minutes and 00 seconds by split
   let timer = parseInt(duration.split(":")[0]) * 60 +
@@ -99,6 +98,7 @@ function timeCountdown(duration) {
   // interval function
   let timeInterval = setInterval(function () {
 
+    // stop the interval if we click stop.
     if (!running) {
       running = false;
       clearInterval(timeInterval);
@@ -113,6 +113,7 @@ function timeCountdown(duration) {
 
     timeLeft.innerText = minutes + ":" + seconds;
 
+    // decide if it's session now or break once we hit 00:00 time.
     if (--timer == -1) {
       if (activeSession) {
         activeSession = false;
@@ -128,76 +129,5 @@ function timeCountdown(duration) {
         return;
       }
     };
-  }, 1000);
-
+  }, 1000); // 1 second = 1000 ms.
 };
-
-
-
-
-
-// function startTimer(duration, display) {
-//     let timer = duration, minutes, seconds;
-//     setInterval(function () {
-//         minutes = parseInt(timer / 60, 10);
-//         seconds = parseInt(timer % 60, 10);
-
-//         minutes = minutes < 10 ? "0" + minutes : minutes;
-//         seconds = seconds < 10 ? "0" + seconds : seconds;
-
-//         display.textContent = minutes + ":" + seconds;
-
-//         if (--timer < 0) {
-//             timer = duration;
-//         }
-//     }, 1000);
-// };
-
-// function timer(minutes) {
-//   // minutes = number of minutes to countdown
-//     display = document.querySelector('#time-left');
-//     let seconds = 60 * minutes,
-//     startTimer(seconds, display);
-// };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// !! IMPORTANT README:
-
-// You may add additional external JS and CSS as needed to complete the project, however the current external resource MUST remain in place for the tests to work. BABEL must also be left in place. 
-
-/***********
-INSTRUCTIONS:
-  - Select the project you would 
-    like to complete from the dropdown 
-    menu.
-  - Click the "RUN TESTS" button to
-    run the tests against the blank 
-    pen.
-  - Click the "TESTS" button to see 
-    the individual test cases. 
-    (should all be failing at first)
-  - Start coding! As you fulfill each
-    test case, you will see them go   
-    from red to green.
-  - As you start to build out your 
-    project, when tests are failing, 
-    you should get helpful errors 
-    along the way!
-    ************/
-
-// PLEASE NOTE: Adding global style rules using the * selector, or by adding rules to body {..} or html {..}, or to all elements within body or html, i.e. h1 {..}, has the potential to pollute the test suite's CSS. Try adding: * { color: red }, for a quick example!
-
-// Once you have read the above messages, you can delete all comments.

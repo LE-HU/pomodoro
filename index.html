@@ -1,77 +1,60 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - FCC: Pomodoro Clock</title>
+  <title>Pomodoro Timer</title>
+  <link rel="shortcut icon" href="./favicon.png">
   <script src="https://kit.fontawesome.com/7583665fdc.js" crossorigin="anonymous"></script>
-<link href="https://fonts.googleapis.com/css2?family=Nova+Round&family=Open+Sans&display=swap" rel="stylesheet"> <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nova+Round&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
 
 </head>
+
 <body>
-<!-- partial:index.partial.html -->
-<main class="container">
-  <section id="pomodoro-clock">
-    <section id="main-label">Pomodoro Clock</section>
-    <section id="break">
-      <div id="break-label">Break Length</div>
-      <div id="break-decrement" class="arrows">
-        <i class="fas fa-arrow-down"></i></div>
-      <div id="break-length">5</div>
-      <div id="break-increment" class="arrows">
-        <i class="fas fa-arrow-up"></i></div>
+  <!-- Pomodoro Counter -->
+  <main class="container">
+    <section id="pomodoro-clock">
+      <section id="main-label">Pomodoro Clock</section>
+      <section id="break">
+        <div id="break-label">Break Length</div>
+        <div id="break-decrement" class="arrows">
+          <i class="fas fa-arrow-down"></i></div>
+        <div id="break-length">5</div>
+        <div id="break-increment" class="arrows">
+          <i class="fas fa-arrow-up"></i></div>
+      </section>
+
+      <section id="session">
+        <div id="session-label">Session Length</div>
+        <div id="session-decrement" class="arrows">
+          <i class="fas fa-arrow-down"></i></div>
+        <div id="session-length">25</div>
+        <div id="session-increment" class="arrows">
+          <i class="fas fa-arrow-up"></i></div>
+      </section>
+
+      <section id="timer">
+        <div id="timer-label">Session</div>
+        <div id="time-left">00:00</div>
+      </section>
+
+      <section id="controls">
+        <div id="start_stop">
+          <i class="fas fa-play"></i>
+          <i class="fas fa-stop"></i>
+        </div>
+        <div id="reset">
+          <i class="fas fa-sync-alt"></i></div>
+      </section>
+
+      <audio id="beep" src="http://soundbible.com/mp3/Fire_pager-jason-1283464858.mp3" type="audio/mp3"></audio>
+
     </section>
-    
-    <section id="session">
-      <div id="session-label">Session Length</div>
-      <div id="session-decrement" class="arrows">
-        <i class="fas fa-arrow-down"></i></div>
-      <div id="session-length">25</div>
-      <div id="session-increment" class="arrows">
-        <i class="fas fa-arrow-up"></i></div>
-    </section>
-    
-    <section id="timer">
-      <div id="timer-label">Session</div>
-      <div id="time-left">00:00</div>
-    </section>
-    
-    <section id="controls">
-      <div id="start_stop">
-        <i class="fas fa-play"></i>
-        <i class="fas fa-stop"></i>
-      </div>
-      <div id="reset">
-        <i class="fas fa-sync-alt"></i></div>
-    </section>
-    
-    <audio id="beep" src="http://soundbible.com/mp3/Fire_pager-jason-1283464858.mp3" type="audio/mp3"></audio>
-    
-  </section><!-- Pomodoro Counter -->
-</main>
+  </main>
 
-
-
-
-<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-
-
-
-
-
-
-
-
-<!-- 
-
-Hello Camper!
-
-For now, the test suite only works in Chrome! Please read the README below in the JS Editor before beginning. Feel free to delete this message once you have read it. Good luck and Happy Coding! 
-
-- The freeCodeCamp Team 
-
--->
-<!-- partial -->
-  <script  src="./script.js"></script>
+  <script src="./script.js"></script>
 
 </body>
+
 </html>
